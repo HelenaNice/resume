@@ -1,101 +1,172 @@
 <main>
-	{{> title data="Welcome to art" big=true}}
+	{{> title data="Welcome to WEB" big=true}}
+	<hr>
 	<article>
-		{{#with program}}
-		{{#with excursion}}
-		<hr>
+		{{#with web}}
+		{{#with languages}}
 		<section>
-			<h2>{{name}}</h2>
-			<div>Location: {{location.city}}. {{location.country}}</div>
-			<div>Date: {{date}}</div>
-		</section>
-		<hr>
-		{{#with program}}
-		<section>
-			<h3>Programm</h3>
-			<hr>
-			<hr>
+			<h3>{{[0].name}}</h3>
+			<div>Version: {{[0].version}}</div>
+			<div>Description: {{[0].description}}</div>
 
-			<h4>1. {{[0].name}}</h4>
-			<div>Type: {{[0].type}}</div>
-			<div>Duration: {{[0].duration}}</div>
+
 			<section>
-				<h4>Details:</h4>
+				<h4>Elements:</h4>
 
-				Museum: {{[0].details.museum.name}}
-				<div>Address:</div>
-				<address>{{[0].details.museum.location.address}}, {{[0].details.museum.location.city}}.
-					{{[0].details.museum.location.country}}</address>
-				<section>
-					<h4>Exhibits</h4>
-
-					<ul>
-						<li>
-							<div>Name: {{[0].details.museum.exhibits.[0].name}}</div>
-							<div>Artist: {{[0].details.museum.exhibits.[0].artist}}</div>
-							<div>Description: <i>{{[0].details.museum.exhibits.[0].description}}</i></div>
-							<div>Audio guide: {{[0].details.museum.exhibits.[0].audio_guide}}
-							</div>
-						</li>
-						<br>
-						<li>
-							<div>Name: {{[0].details.museum.exhibits.[1].name}}</div>
-							<div>Artist: {{[0].details.museum.exhibits.[1].artist}}</div>
-							<div>Description: <i>{{[0].details.museum.exhibits.[1].description}}</i></div>
-							<div>Audio guide: {{[0].details.museum.exhibits.[1].audio_guide}}
-							</div>
-						</li>
-					</ul>
-				</section>
-				<section>
-					<h4>Guide</h4>
-					<div>Name: {{[0].details.guide.name}}</div>
-					<div>Language: {{[0].details.guide.language}}</div>
-					<div>Rating: {{[0].details.guide.rating}}</div>
-				</section>
-			</section>
-		</section>
-		====
-		<section>
-			<h4> 2. {{[1].name}}</h4>
-			<div>Type: {{[1].type}}</div>
-			<div>Duration: {{[1].duration}}</div>
-			<section>
-				<h4>Details:</h4>
-				<div>Venue: {{[1].details.venue.name}}
-					<div>Address:</div>
-					<address>{{[1].details.venue.location.address}}, {{[1].details.venue.location.city}},
-						{{[1].details.venue.location.country}}</address>
-					<section>
-						<h4>Performers</h4>
+				<ul>
+					<li>
+						<div><b>{{[0].elements.[0].name}}</b></div>
+						<div>description: {{[0].elements.[0].description}}</div>
+						<div>attributes:</div>
 						<ul>
 							<li>
-								<div>Name: {{[1].details.performers.[0].name}}</div>
-								<div>Type: {{[1].details.performers.[0].type}}</div>
+								<div>{{[0].elements.[0].attributes.[0].name}}
+									({{[0].elements.[0].attributes.[0].description}})
+								</div>
 							</li>
-							<br>
 							<li>
-								<div>Name: {{[1].details.performers.[1].name}}</div>
-								<div>Type: {{[1].details.performers.[1].type}}</div>
+								<div>{{[0].elements.[0].attributes.[1].name}}
+									({{[0].elements.[0].attributes.[1].description}})
+								</div>
 							</li>
 						</ul>
-					</section>
-			</section>
-			<section>
-				<h4>Guide</h4>
-				<div>Name: {{[1].details.guide.name}}</div>
-				<div>Language: {{[1].details.guide.language}}</div>
-				<div>Rating: {{[1].details.guide.rating}}</div>
-			</section>
-		</section>
-		</section>
+						</div>
 
-		<hr>
+					</li>
+					<br>
+					<li>
+						<div><b>{{[0].elements.[1].name}}</b></div>
+						<div>description: {{[0].elements.[1].description}}</div>
+						<div>attributes:</div>
+						<ul>
+							<li>
+								<div>{{[0].elements.[1].attributes.[0].name}}
+									({{[0].elements.[1].attributes.[0].description}})
+								</div>
+							</li>
+
+							<li>
+								<div>{{[0].elements.[1].attributes.[1].name}}
+									({{[0].elements.[1].attributes.[1].description}})
+								</div>
+							</li>
+						</ul>
+						</div>
+					</li>
+
+				</ul>
+			</section>
+			<hr>
+			<section>
+				<h3>{{[1].name}}</h3>
+				<div>Version: {{[1].version}}</div>
+				<div>Description: {{[1].description}}</div>
+				<section>
+					<h4>Properties:</h4>
+					<ul>
+						<li>
+							<div><b>{{[1].properties.[0].name}}</b></div>
+							<div>description: {{[1].properties.[0].description}}</div>
+							<div>Value:</div>
+							<ul>
+								<li>
+									<div>{{[1].properties.[0].values.[0].value}}
+										({{[1].properties.[0].values.[0].description}})
+									</div>
+								</li>
+
+								<li>
+									<div>{{[1].properties.[0].values.[1].value}}
+										({{[1].properties.[0].values.[1].description}})
+									</div>
+								</li>
+								<br>
+							</ul>
+
+							</div>
+
+						</li>
+						<li>
+							<div><b>{{[1].properties.[1].name}}</b></div>
+							<div>description: {{[1].properties.[1].description}}</div>
+							<div>Value:</div>
+							<ul>
+								<li>
+									<div>{{[1].properties.[1].values.[0].value}}
+										({{[1].properties.[1].values.[0].description}})
+									</div>
+								</li>
+								<li>
+									<div>{{[1].properties.[1].values.[1].value}}
+										({{[1].properties.[1].values.[1].description}})
+									</div>
+								</li>
+						</li>
+
+					</ul>
+				</section>
+
+				<hr>
+
+				{{!-- java --}}
+
+				</div>
+				<section>
+					<h3>{{[2].name}}</h3>
+					<div>Version: {{[2].version}}</div>
+					<div>Description: {{[2].description}}</div>
+					<section>
+						<h4>Functions</h4>
+						<ul>
+							<li>
+								<div><b>{{[2].functions.[0].name}}</b></div>
+								<div>description: {{[2].functions.[0].description}}</div>
+								<div><u>Parameters:</u></div>
+								<ul>
+									<li>
+										<div>{{[2].functions.[0].parameters.[0].name}}
+											({{[2].functions.[0].parameters.[0].description}}).<br>
+											Type:{{[2].functions.[0].parameters.[0].type}}
+										</div>
+									</li>
+									<br>
+								</ul>
+
+								</div>
+
+							</li>
+							<li>
+								<div><b>{{[2].functions.[1].name}}</b></div>
+								<div>description: {{[2].functions.[1].description}}</div>
+								<div><u>Parameters:</u></div>
+								<ul>
+									<li>
+										<div>{{[2].functions.[1].parameters.[0].name}}
+											{{!-- ====== --}}
+											({{[2].functions.[1].parameters.[0].description}}).<br>
+											Type:{{[2].functions.[1].parameters.[0].type}}
+										</div>
+									</li>
+									<br>
+								</ul>
+								</div>
+							</li>
+
+						</ul>
+
+					</section>
+
+				</section>
+
+
+
+
+
+				{{/with }}
+				{{/with }}
+
 
 
 	</article>
 
-	{{/with}}
-	{{/with}}
-	{{/with}}
 </main>
