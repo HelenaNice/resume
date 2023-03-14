@@ -1,0 +1,78 @@
+{{!-- 
+Це код container файлу для person сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/person"
+--}}
+
+<div>
+	{{#with person}}
+	<main>
+		{{> title data="Person" big=true}}
+		<h3>{{name}}</h3>
+		<section>
+			<div>Age: {{age}}</div>
+			<div>Gender: {{gender}}</div>
+			<div> Address:
+				{{#with address}}
+				{{street}} , {{city}}, {{state}}, {{zip}}, {{country}}
+				{{/with}}
+			</div>
+			<hr>
+			<br>
+			<div><b>Education</b></div>
+			<ul>
+				{{#each education}}
+				<li>
+					<div>Degree: {{degree}} </div>
+					<div>Major: {{major}}</div>
+					<div>University: {{university}}</div>
+					<div>Graduated: {{graduationYear}}</div>
+				</li>
+				{{/each}}
+			</ul>
+			<br>
+			<hr>
+			<br>
+			<div><b>Work experience</b></div>
+			<ul>
+				{{#each workExperience}}
+				<li>
+					<div><b>Company:</b> {{company}} </div>
+					<div>Title: {{title}}</div>
+					<div>Term: {{startDate}}–{{endDate}}</div>
+					<br>
+					<div>Responsibilities: {{responsibilities}}</div>
+					<div>Year founded: {{year_founded}}</div>
+					<div>Industry: {{industry}}</div>
+					____________
+					<div><b>Employees</Employees></b></div>
+					<ul>
+						{{#each employees}}
+						<li>
+							<div>{{name}}, {{position}}</div>
+							<div>Department: {{department}}</div>
+							<div>Projects:</div>
+							{{#each projects}}
+							<div><u>{{name}}</u> (<i>{{description}}</i>)</div>
+							<div>Status: {{status}}</div>
+
+
+							{{/each}}
+						</li>
+						{{/each}}
+					</ul>
+				</li>
+				{{/each}}
+				____________
+
+			</ul>
+		</section>
+		<hr>
+		<div>
+			<section>
+				<h4>Teams</h4>
+				<div>{{workExperience.employees.projects.teams.team_leader.name}}</div>
+			</section>
+		</div>
+	</main>
+	{{/with }}
+</div>

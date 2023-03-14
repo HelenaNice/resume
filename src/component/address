@@ -1,0 +1,8 @@
+{{#with address}}
+<div>{{ street }}</div>
+<div>{{ city }}</div>
+<div>{{ state }}</div>
+<div>{{ zip }}</div>
+<div>{{ country }}</div>
+
+{{/with}}
