@@ -1,0 +1,120 @@
+<main>
+	{{> title data="Biography of Einstein" big=true}}
+	<article>
+		<hr>
+		<section>
+			<h2>{{name}}</h2>
+			<div>Birth: {{birthdate}} ({{birthplace}})</div>
+			<div>Death: {{deathdate}} ({{deathplace}})</div>
+			<div>Nationality: {{nationality}}
+				<div>Occupation:{{occupation}}</div>
+				<ul>
+					{{#each known_for}}
+					<li>{{this}}</li>
+					{{/each}}
+				</ul>
+
+		</section>
+		<hr>
+		<section>
+			<h3>Education</h3>
+			<div>Degree: {{education.[0].degree}} </div>
+			<div>Field: {{education.[0].field}} </div>
+			<div>Institution: {{education.[0].institution}}</div>
+			<div>Year: {{education.[0].year}}</div>
+
+		</section>
+		<hr>
+		<section>
+			<h3>Notable publications</h3>
+			{{#with notable_publications}}
+			<ul>
+				<li>
+					<cite>{{[0].title}}, {{[0].year}} ({{[0].publisher}}) </cite>
+				</li>
+				<li>
+					<cite>{{[1].title}}, {{[1].year}} ({{[1].publisher}}) </cite>
+				</li>
+			</ul>
+			{{/with}}
+		</section>
+		<hr>
+		<section>
+			<h3>Partners</h3>
+			{{#with partners}}
+			<ul>
+				<li>
+					<div>{{[0].name}},<br>
+						{{[0].relationship}} ({{[0].years}}) </div>
+				</li>
+				<li>
+					<div>{{[1].name}},<br>
+						{{[1].relationship}} ({{[1].years}}) </div>
+				</li>
+			</ul>
+
+			{{/with}}
+		</section>
+		<hr>
+
+		<section>
+			<h3>Awards</h3>
+			{{#with awards}}
+			<div><strong> {{[0].title}}</strong>, {{[0].year}} <i>({{[0].description}})</i></div>
+			{{/with}}
+		</section>
+		<hr>
+		<section>
+			<h3>Influences</h3>
+			<ul>
+				{{#each influences}}
+				<li>{{this}}</li>
+				{{/each}}
+			</ul>
+
+		</section>
+		<hr>
+		<section>
+			<h3>Influenced</h3>
+			<ul>
+				{{#each influenced}}
+				<li>{{this}}</li>
+				{{/each}}
+			</ul>
+
+		</section>
+		<hr>
+		<section>
+			<h3>Quotes</h3>
+			<ul>
+				{{#each quotes}}
+				<li><cite>"{{this}}"</cite></li>
+				{{/each}}
+			</ul>
+		</section>
+		<hr>
+		<section>
+			<h3>Major discoveries</h3>
+			{{#with major_discoveries}}
+			<div><strong> {{[0].title}}</strong>, {{[0].year}} <i>({{[0].description}})</i></div>
+			{{/with}}
+
+		</section>
+		<hr>
+		<section>
+			<h3>Contributions</h3>
+			{{#with contributions}}
+			<div><strong> "{{title}}"</strong>,<br>
+				{{year}}<br>
+				Description: <i>({{description}})</i><br>
+				Field: {{field}}</div>
+			{{/with}}
+
+
+		</section>
+		<hr>
+
+
+	</article>
+
+</main>
