@@ -1,0 +1,164 @@
+<main>
+	{{> title data="Welcome to WEB" big=true}}
+	<hr>
+	<article>
+		{{#with web}}
+		{{#with languages}}
+		<section>
+			<h3>{{[0].name}}</h3>
+			<div>Version: {{[0].version}}</div>
+			<div>Description: {{[0].description}}</div>
+			<section>
+				<h4>Elements:</h4>
+				<ul>
+					<li>
+						<div><b>{{[0].elements.[0].name}}</b></div>
+						<div>description: {{[0].elements.[0].description}}</div>
+						<div>attributes:</div>
+						<ul>
+							<li>
+								<div>{{[0].elements.[0].attributes.[0].name}}
+									({{[0].elements.[0].attributes.[0].description}})
+								</div>
+							</li>
+							<li>
+								<div>{{[0].elements.[0].attributes.[1].name}}
+									({{[0].elements.[0].attributes.[1].description}})
+								</div>
+							</li>
+						</ul>
+						</div>
+
+					</li>
+					<br>
+					<li>
+						<div><b>{{[0].elements.[1].name}}</b></div>
+						<div>description: {{[0].elements.[1].description}}</div>
+						<div>attributes:</div>
+						<ul>
+							<li>
+								<div>{{[0].elements.[1].attributes.[0].name}}
+									({{[0].elements.[1].attributes.[0].description}})
+								</div>
+							</li>
+
+							<li>
+								<div>{{[0].elements.[1].attributes.[1].name}}
+									({{[0].elements.[1].attributes.[1].description}})
+								</div>
+							</li>
+						</ul>
+						</div>
+					</li>
+
+				</ul>
+			</section>
+			<hr>
+			<section>
+				<h3>{{[1].name}}</h3>
+				<div>Version: {{[1].version}}</div>
+				<div>Description: {{[1].description}}</div>
+				<section>
+					<h4>Properties:</h4>
+					<ul>
+						<li>
+							<div><b>{{[1].properties.[0].name}}</b></div>
+							<div>description: {{[1].properties.[0].description}}</div>
+							<div>Value:</div>
+							<ul>
+								<li>
+									<div>{{[1].properties.[0].values.[0].value}}
+										({{[1].properties.[0].values.[0].description}})
+									</div>
+								</li>
+
+								<li>
+									<div>{{[1].properties.[0].values.[1].value}}
+										({{[1].properties.[0].values.[1].description}})
+									</div>
+								</li>
+								<br>
+							</ul>
+							</div>
+						</li>
+						<li>
+							<div><b>{{[1].properties.[1].name}}</b></div>
+							<div>description: {{[1].properties.[1].description}}</div>
+							<div>Value:</div>
+							<ul>
+								<li>
+									<div>{{[1].properties.[1].values.[0].value}}
+										({{[1].properties.[1].values.[0].description}})
+									</div>
+								</li>
+								<li>
+									<div>{{[1].properties.[1].values.[1].value}}
+										({{[1].properties.[1].values.[1].description}})
+									</div>
+								</li>
+						</li>
+					</ul>
+				</section>
+				<hr>
+				{{!-- java --}}
+
+				</div>
+				<section>
+					<h3>{{[2].name}}</h3>
+					<div>Version: {{[2].version}}</div>
+					<div>Description: {{[2].description}}</div>
+					<section>
+						<h4>Functions</h4>
+						<ul>
+							<li>
+								<div><b>{{[2].functions.[0].name}}</b></div>
+								<div>description: {{[2].functions.[0].description}}</div>
+								<div><u>Parameters:</u></div>
+								<ul>
+									<li>
+										<div>{{[2].functions.[0].parameters.[0].name}}
+											({{[2].functions.[0].parameters.[0].description}}).<br>
+											Type:{{[2].functions.[0].parameters.[0].type}}
+										</div>
+									</li>
+									<br>
+								</ul>
+
+								</div>
+
+							</li>
+							<li>
+								<div><b>{{[2].functions.[1].name}}</b></div>
+								<div>description: {{[2].functions.[1].description}}</div>
+								<div><u>Parameters:</u></div>
+								<ul>
+									<li>
+										<div>{{[2].functions.[1].parameters.[0].name}}
+											{{!-- ====== --}}
+											({{[2].functions.[1].parameters.[0].description}}).<br>
+											Type:{{[2].functions.[1].parameters.[0].type}}
+										</div>
+									</li>
+									<br>
+								</ul>
+								</div>
+							</li>
+
+						</ul>
+
+					</section>
+
+				</section>
+
+
+
+
+
+				{{/with }}
+				{{/with }}
+
+
+
+	</article>
+
+</main>
