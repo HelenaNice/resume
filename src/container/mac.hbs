@@ -1,0 +1,141 @@
+<main>
+	{{> title data="Welcome to Apple!" big=true}}
+	<hr>
+	<article>
+		<h2>{{name}}</h2>
+
+		<section>
+			<div><i>{{description}}</i></div>
+			<br>
+			<div>price: {{price}}</div>
+			<div>category: {{category}}</div>
+		</section>
+		<hr>
+		<hr>
+		<h3>Features</h3>
+		{{#with features}}
+		<section>
+			<h4>Processor</h4>
+			<section>
+				{{#with processor}}
+				<ul>
+					<li>
+						<div>brand: {{brand}}</div>
+					</li>
+					<li>
+						<div>model: {{model}}</div>
+					</li>
+					<li>
+						<div>speed: {{speed}}</div>
+					</li>
+					<li>
+						<div>cores: {{cores}}</div>
+					</li>
+					<li>
+						<div>cache: {{cache}}</div>
+					</li>
+
+				</ul>
+				{{/with}}
+
+				<div></div>
+			</section>
+			<hr>
+			<h4>Memory</h4>
+			<section>
+				{{#with memory}}
+				<div>type: {{type}}</div>
+				<div>size: {{size}}</div>
+				<div>speed: {{speed}}</div>
+				{{/with}}
+			</section>
+			<hr>
+			<h4>Storage</h4>
+			<section>
+				{{#with storage}}
+				<div>type: {{type}}</div>
+				<div>size: {{size}}</div>
+				{{/with }}
+			</section>
+			<hr>
+			<h4>Display</h4>
+			<section>
+				{{#with display}}
+				<div>size: {{size}}</div>
+				<div>resolution: {{resolution}}</div>
+				<div>technology: {{technology}}</div>
+				<div>color space: {{color_space}}</div>
+				<div>brightness: {{brightness}}</div>
+				<div>refresh rate: {{refresh_rate}}</div>
+				{{/with }}
+			</section>
+			<hr>
+			<h4>Graphics</h4>
+			<section>
+				{{#with graphics}}
+				<div>brand: {{brand}}</div>
+				<div>model: {{model}}</div>
+				{{/with}}
+			</section>
+			<hr>
+			<h4>Ports</h4>
+			<section>
+				{{#with ports}}
+				<div>Type: {{[0].type}}</div>
+				<div>Count: {{[0].count}}</div>
+				<div>Features</div>
+				<ul>
+					{{#each [0].features}}
+					<li>{{this}}</li>
+					{{/each}}
+				</ul>
+				<div>Type: {{[1].type}}</div>
+				<div>Count: {{[1].count}}</div>
+				{{/with}}
+			</section>
+			<hr>
+			<h4>Battery</h4>
+			<section>
+				{{#with battery}}
+				<div>type: {{type}}</div>
+				<div>capacity: {{capacity}}</div>
+				<div>life: {{life}}</div>
+				{{/with}}
+			</section>
+			<hr>
+			<h4>Weight</h4>
+			<section>
+				<div>weight: {{weight}}</div>
+				{{#with dimensions}}
+				<div>height: {{height}}</div>
+				<div>width: {{width}}</div>
+				<div>depth: {{depth}}</div>
+				{{/with}}
+			</section>
+
+			<hr>
+			<h4>Operating system</h4>
+			<section>
+				<div> {{operating_system}}</div>
+			</section>
+			<hr>
+			<h4>Accessories</h4>
+			<section>
+				{{#each accessories}}
+				<ul>
+					<li>
+						<div>{{name}}, (price: {{price}})</div>
+					</li>
+				</ul>
+				{{/each}}
+
+			</section>
+
+		</section>
+		{{/with}}
+
+
+		<hr>
+	</article>
+
+</main>

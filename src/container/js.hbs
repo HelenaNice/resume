@@ -1,0 +1,71 @@
+<main>
+	{{> title data="JavaScript" big=true}}
+	<article>
+		<hr>
+		<section>
+			<h2>{{name}}</h2>
+			<div>Description: {{description}}</div>
+			<div>Founder {{history.founder}},({{history.year}}</div>
+		</section>
+		<hr>
+		<section>
+			<h3>Types</h3>
+			<div>
+				<ul>
+					{{#each types}}
+					<li>{{this}}</li>
+					{{/each}}
+				</ul>
+			</div>
+			<hr>
+		</section>
+		<section>
+			<h3>Features</h3>
+			<div>
+				<ul>
+					{{#each features}}
+					<li>{{this}}</li>
+					{{/each}}
+				</ul>
+			</div>
+		</section>
+		<hr>
+		<section>
+			<h3>Libraries</h3>
+			<div>
+				<ul>
+					{{#each libraries}}
+					<li>{{this}}</li>
+					{{/each}}
+				</ul>
+			</div>
+		</section>
+		<hr>
+		<section>
+			<h3>Tools</h3>
+			<div>
+				<ul>
+					{{#each tools}}
+					<li>{{this}}</li>
+					{{/each}}
+				</ul>
+			</div>
+		</section>
+		<hr>
+		<section>
+			<h3>Community</h3>
+			<div>
+				<ul>
+					{{#with community}}
+					<li>{{[0].name}} ({{[0].type}})</li>
+					<li>{{[1].name}} ({{[1].type}})</li>
+					<li>{{[2].name}} ({{[2].type}})</li>
+					<li>{{[3].name}} ({{[3].type}})</li>
+					{{/with}}
+				</ul>
+			</div>
+		</section>
+		<hr>
+	</article>
+
+</main>
