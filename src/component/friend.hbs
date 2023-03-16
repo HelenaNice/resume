@@ -1,0 +1,23 @@
+{{#if friends includeZero=true}}
+<br>
+<div><u><b>Friends:</b></u></div>
+<section>
+    {{#each friends}}
+    <ul>
+        <li>
+            {{> human}}
+            <br>
+            {{#if mutual_friends includeZero=true}}
+            <div><u>mutual friends:</u></div>
+            <ul>
+                {{#each mutual_friends}}
+                <li>{{> human}}</li>
+                <br>
+                {{/each }}
+            </ul>
+            {{/if }}
+        </li>
+    </ul>
+    {{/each }}
+</section>
+{{/if }}

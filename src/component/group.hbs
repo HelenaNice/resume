@@ -1,0 +1,17 @@
+{{#if groups includeZero=true}}
+<div><u><b>Groups:</b></u></div>
+<br>
+{{#each groups}}
+<div><b>{{name}}</b></div>
+<div>id:{{id}}</div>
+<div>description: {{description}}</div>
+<br>
+<div><u>Members:</u></div>
+<ul>
+    {{#each members}}
+    <li>{{> human}}</li>
+    <br>
+    {{/each }}
+</ul>
+{{/each }}
+{{/if }}

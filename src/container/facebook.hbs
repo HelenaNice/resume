@@ -1,0 +1,15 @@
+<main>
+	{{> title data="Welcome to Facebook" big=true}}
+	<hr>
+	<article>
+		{{#each users}}
+		<section>
+			{{> human}}
+			{{> friend}}
+			<br>
+			<hr>
+			{{> group}}
+		</section>
+		{{/each}}
+	</article>
+</main>
