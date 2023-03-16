@@ -1,0 +1,103 @@
+<main>
+	<article>
+		<section>
+			<h1 class="text-center">{{page_header.title}}</h1>
+			<div class="text-center">{{page_header.description}}</div>
+		</section>
+		<br>
+		<section>
+			<div class="card">
+				<div class="card-body">
+					{{#with section.about_us.title_list}}
+					<div class="display-6 text-end">{{main}}</div>
+					<br>
+					<h2 class="text-end">{{sub}}</h2>
+					{{/with}}
+					<br>
+					<button class="btn btn-outline-primary">{{section.about_us.button.text}}</button>
+				</div>
+			</div>
+		</section>
+		<br>
+		<section>
+			<div class="card">
+				<div class="card-body">
+					{{#with section.advantage}}
+					<div class="display-5">{{title}}</div>
+					<br>
+
+					<section>
+						<div class="card">
+							<div class="card-body">
+								{{#with efficiency}}
+								{{> titleSubDes}}
+								{{> butWarn}}
+								{{/with}}
+							</div>
+						</div>
+					</section>
+					<br>
+
+					<section>
+						<div class="card">
+							<div class="card-body">
+								{{#with innovation}}
+								<div class="text-center">
+									{{> titleSubDes}}
+								</div>
+								{{> butWarn}}
+								{{/with}}
+							</div>
+						</div>
+					</section>
+					<br>
+
+					<section>
+						<div class="card">
+							<div class="card-body">
+								{{#with collaboration}}
+								<div class="text-end">
+									{{> titleSubDes}}
+								</div>
+								{{> butWarn}}
+								{{/with}}
+							</div>
+						</div>
+					</section>
+					<br>
+					{{/with}}
+				</div>
+			</div>
+		</section>
+		<br>
+		<section>
+			<div class="card">
+				<div class="card-body">
+					{{#with section.agreement}}
+					<div class="display-5 ">{{title}}</div>
+					<br>
+					<section>
+						<div class="card">
+							<div class="card-body">
+								<h5>{{info.sub_title}}</h5>
+								<section>
+									<div class="card">
+										<div class="card-body">
+											{{#with info.detail}}
+											<div>{{text}}</div>
+											<br>
+											{{> butGreen}}
+											{{/with}}
+										</div>
+									</div>
+								</section>
+							</div>
+						</div>
+					</section>
+					{{/with}}
+					<br>
+				</div>
+			</div>
+		</section>
+	</article>
+</main>
