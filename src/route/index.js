@@ -1113,10 +1113,13 @@ router.get('/facebook', function (req, res) {
             ],
           },
         ],
+      },
+    ],
+  })
+  //                  ↑↑ сюди вводимо JSON дані
+})
 //=======
 router.get('/js', function (req, res) {
-  // res.render генерує нам HTML сторінку
-
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('js', {
     layout: 'basic',
@@ -1187,98 +1190,170 @@ router.get('/js', function (req, res) {
       {
         name: 'CSS-Tricks',
         type: 'blog',
-
       },
     ],
   })
   //                  ↑↑ сюди вводимо JSON дані
-})
+}),
+  // ================================================================
+
+  // router.get Створює нам один ентпоїнт
+
+  router.get('/mac', function (req, res) {
+    // res.render генерує нам HTML сторінку
+
+    //            ↙ cюди вводимо назву файлу з сontainer
+    res.render('mac', {
+      layout: 'basic',
+      name: 'Apple MacBook Pro',
+      description: 'The ultimate notebook for power users',
+      price: 1999.99,
+      category: 'Computers & Tablets',
+      features: {
+        processor: {
+          brand: 'Intel',
+          model: 'Core i9',
+          speed: '2.3 GHz',
+          cores: 8,
+          cache: '16 MB',
+        },
+        memory: {
+          type: 'DDR4',
+          size: '32 GB',
+          speed: '2666 MHz',
+        },
+        storage: {
+          type: 'SSD',
+          size: '1 TB',
+        },
+        display: {
+          size: '16 inches',
+          resolution: '3072x1920',
+          technology: 'Retina',
+          color_space: 'P3',
+          brightness: '500 nits',
+          refresh_rate: '60 Hz',
+        },
+        graphics: {
+          brand: 'AMD',
+          model: 'Radeon Pro 5500M',
+          memory: '4 GB GDDR6',
+        },
+        ports: [
+          {
+            type: 'Thunderbolt 3',
+            count: 4,
+            features: [
+              'Charging',
+              'DisplayPort',
+              'Thunderbolt (up to 40 Gbps)',
+              'USB 3.1 Gen 2 (up to 10 Gbps)',
+            ],
+          },
+          {
+            type: 'HDMI',
+            count: 1,
+          },
+        ],
+        battery: {
+          type: 'Lithium Polymer',
+          capacity: '100 Wh',
+          life: 'Up to 11 hours',
+        },
+        weight: '4.3 pounds',
+        dimensions: {
+          height: '0.64 inch',
+          width: '14.09 inches',
+          depth: '9.68 inches',
+        },
+        operating_system: 'macOS',
+        accessories: [
+          {
+            name: 'Apple Magic Keyboard',
+            price: 99.99,
+          },
+          {
+            name: 'Apple Magic Mouse 2',
+            price: 79.99,
+          },
+          {
+            name: 'USB-C to USB Adapter',
+            price: 19.99,
+          },
+        ],
+      },
+    })
+    //                  ↑↑ сюди вводимо JSON дані
+  })
 
 // ================================================================
-
+// ================================================================
 
 // router.get Створює нам один ентпоїнт
 
-router.get('/mac', function (req, res) {
+//           ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/task21', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
-  res.render('mac', {
+  res.render('task21', {
     layout: 'basic',
-    name: 'Apple MacBook Pro',
-    description: 'The ultimate notebook for power users',
-    price: 1999.99,
-    category: 'Computers & Tablets',
-    features: {
-      processor: {
-        brand: 'Intel',
-        model: 'Core i9',
-        speed: '2.3 GHz',
-        cores: 8,
-        cache: '16 MB',
+    heading: {
+      main: {
+        title: 'JavaScript',
+        text: 'JavaScript is a popular high-level, dynamic, and interpreted programming language.',
+        button_text: {
+          solid: 'Open page',
+          outline: 'Add to cart',
+        },
       },
-      memory: {
-        type: 'DDR4',
-        size: '32 GB',
-        speed: '2666 MHz',
+      second: {
+        title: 'Stack Overflow',
+        text: 'First-class functions',
+        button_text: {
+          solid: 'Open page',
+          outline: 'Add to cart',
+        },
       },
-      storage: {
-        type: 'SSD',
-        size: '1 TB',
+      subblock: {
+        title: 'JavaScript Weekly',
+        text: 'Prototype-based inheritance newsletter',
+        button_text: {
+          solid: 'Open page',
+          outline: 'Add to cart',
+        },
       },
-      display: {
-        size: '16 inches',
-        resolution: '3072x1920',
-        technology: 'Retina',
-        color_space: 'P3',
-        brightness: '500 nits',
-        refresh_rate: '60 Hz',
+    },
+    nested_display: {
+      title: 'HTML',
+      children_display: {
+        title: 'Outdated HTML tags',
+        text: 'tags that have been identified as deprecated and not recommended for use in HTML version 5',
+        button: {
+          text: 'Орen',
+        },
       },
-      graphics: {
-        brand: 'AMD',
-        model: 'Radeon Pro 5500M',
-        memory: '4 GB GDDR6',
+      header_text: 'Sections',
+      button: {
+        text: 'Learn more',
       },
-      ports: [
+    },
+    paragraph: {
+      title: 'About modules',
+      text: 'Modules with import/export statements',
+
+      button: {
+        text: 'Open link page',
+        url: 'https://google.com',
+      },
+      list_name: [
         {
-          type: 'Thunderbolt 3',
-          count: 4,
-          features: [
-            'Charging',
-            'DisplayPort',
-            'Thunderbolt (up to 40 Gbps)',
-            'USB 3.1 Gen 2 (up to 10 Gbps)',
-          ],
+          text: 'Github',
+          url: 'https://github.com/',
         },
         {
-          type: 'HDMI',
-          count: 1,
-        },
-      ],
-      battery: {
-        type: 'Lithium Polymer',
-        capacity: '100 Wh',
-        life: 'Up to 11 hours',
-      },
-      weight: '4.3 pounds',
-      dimensions: {
-        height: '0.64 inch',
-        width: '14.09 inches',
-        depth: '9.68 inches',
-      },
-      operating_system: 'macOS',
-      accessories: [
-        {
-          name: 'Apple Magic Keyboard',
-          price: 99.99,
-        },
-        {
-          name: 'Apple Magic Mouse 2',
-          price: 79.99,
-        },
-        {
-          name: 'USB-C to USB Adapter',
-          price: 19.99,
+          text: 'Bootstrap',
+          url: 'https://getbootstrap.com/',
         },
       ],
     },
@@ -1287,7 +1362,5 @@ router.get('/mac', function (req, res) {
 })
 
 // ================================================================
-
-
 // Підключаємо роутер до бек-енду
 module.exports = router
