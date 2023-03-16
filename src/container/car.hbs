@@ -1,0 +1,224 @@
+<main>
+	{{> title data="Toyota" big=true}}
+	<hr>
+	<section>
+		<div><strong>{{make}}</strong></div>
+		<div>model: {{ model}}</div>
+		<div>year: {{year}}</div>
+		<div>color: {{color}}</div>
+	</section>
+	<hr>
+	<article>
+		{{!-- 1 --}}
+		<section>
+			<h2>Features</h2>
+			{{#with features}}
+			<section>
+				<h3>Interior</h3>
+				<section>
+					{{#with interior}}
+					<h4>Seats</h4>
+					{{#with seats}}
+					<ul>
+						<li>
+							<div>material: {{material}}</div>
+						</li>
+						<li>
+							<div>color: {{color}}</div>
+						</li>
+						<li>
+							<div>heated: {{#if heated}} yes {{else}} no{{/if}}</div>
+						</li>
+						<li>
+							<div>ventilated:{{#if ventilated}} yes {{else}} no {{/if}}</div>
+						</li>
+					</ul>
+					{{/with }}
+					<h4>Dashboard</h4>
+					{{#with dashboard}}
+					<ul>
+						<li>
+							<div>material: {{material}}</div>
+						</li>
+						<li>
+							<div>color: {{color}}</div>
+						</li>
+						<li>
+							<div>display: {{display.type}}, {{display.size}}, {{display.resolution}},
+								{{#if display.touchscreen}} touchscreen{{/if}}</div>
+						</li>
+					</ul>
+					{{/with }}
+					<h4>Audio</h4>
+					{{#with audio}}
+					<ul>
+						<li>
+							<div>system: {{system}}</div>
+						</li>
+						<li>
+							<div>speakers: {{speakers}}</div>
+						</li>
+						<li>
+							<div>subwoofer: {{#if subwoofer}} yes {{else}} no{{/if}}</div>
+						</li>
+						<li>
+							<div>bluetooth: {{#if bluetooth}} yes {{else}} no{{/if}}</div>
+						</li>
+						<li>
+							<div>USB: {{#if USB}} yes {{else}} no{{/if}}</div>
+						</li>
+					</ul>
+					{{/with }}
+					{{/with }}
+				</section>
+			</section>
+			<hr>
+			<section>
+				{{#with exterior}}
+				<h3>Exterior</h3>
+				<section>
+					<h4>Wheels</h4>
+					{{#with wheels}}
+					<ul>
+						<li>
+							<div> size: {{size}}</div>
+						</li>
+						<li>
+							<div> type: {{type}}</div>
+						</li>
+						<li>
+							<div> color: {{color}}</div>
+						</li>
+					</ul>
+					{{/with }}
+				</section>
+				<section>
+					<h4>Headlights</h4>
+					{{#with headlights}}
+					<ul>
+						<li>
+							<div> type: {{type}}</div>
+						</li>
+						<li>
+							<div> brightness: {{brightness}}</div>
+						</li>
+						<li>
+							<div> automatic: {{#if automatic}} yes {{else}} no{{/if}}</div>
+						</li>
+					</ul>
+					{{/with }}
+				</section>
+				<section>
+					<h4>Sunroof</h4>
+					{{#with sunroof}}
+					<ul>
+						<li>
+							<div> type: {{type}}</div>
+						</li>
+						<li>
+							<div> size: {{size}}</div>
+						</li>
+						<li>
+							<div> automatic: {{#if automatic}} yes {{else}} no{{/if}}</div>
+						</li>
+					</ul>
+					{{/with }}
+				</section>
+				{{/with }}
+				<hr>
+				{{#with safety}}
+				<h3>Safety</h3>
+				<section>
+					<h4>Airbags</h4>
+					<div>
+						{{#with airbags}}
+						<ul>
+							<li>front: {{front}}</li>
+							<li>side: {{side}}</li>
+							<li>knee: {{knee}}</li>
+							<li>rear: {{rear}}</li>
+						</ul>
+						{{/with }}
+					</div>
+				</section>
+				<section>
+					<h4>Assistance</h4>
+					<div>
+						{{#with assistance}}
+						<ul>
+							<li>blind spot monitoring: {{#if blind_spot_monitoring}} yes {{else}} no {{/if}}</li>
+							<li>rear cross traffic_alert: {{#if rear_cross_traffic_alert}} yes{{else}} no {{/if}}</li>
+							<li>lane departure warning: {{#if lane_departure_warning}} yes {{else}} no{{/if}}</li>
+							<li>adaptive cruise control: {{#if adaptive_cruise_control}} yes {{else}} no{{/if}}</li>
+							<li>collision warning: {{#if collision_warning}} yes {{else}} no {{/if}}</li>
+						</ul>
+						{{/with }}
+					</div>
+				</section>
+				{{/with }}
+			</section>
+			{{/with }}
+		</section>
+
+		<hr>
+		{{!-- 2 --}}
+		<section>
+			<h2>Engine</h2>
+			{{#with engine}}
+			<div>type: {{type}}</div>
+			<div>displacement: {{displacement}}</div>
+			<div>horsepower: {{horsepower}}</div>
+			<div>torque: {{torque}}</div>
+			<br>
+			<div>transmission:</div>
+			{{#with transmission}}
+			<ul>
+				<li>
+					<div>type: {{type}}</div>
+				</li>
+				<li>
+					<div>gears: {{gears}}</div>
+				</li>
+
+			</ul>
+			{{/with}}
+			{{/with}}
+
+		</section>
+		<hr>
+		{{!-- 3 --}}
+		<section>
+			<h2>Fuel economy</h2>
+			{{#with fuel_economy}}
+			<div>city: {{city}}</div>
+			<div>highway: {{highway}}</div>
+			<div>combined: {{combined}}</div>
+			{{/with}}
+		</section>
+		<hr>
+		<section>
+			<h2>Price</h2>
+			{{#with price}}
+			<div>base: {{base}}</div>
+			<div>destination: {{destination}}</div>
+			{{#with options}}
+			options:
+			<ul>
+				<li>
+					<div>navigation: {{navigation}}</div>
+				</li>
+				<li>
+					<div>moonroof: {{moonroof}}</div>
+				</li>
+				<li>
+					<div>premium paint: {{premium_paint}}</div>
+				</li>
+			</ul>
+			{{/with}}
+			<div>total: {{total}}</div>
+			{{/with}}
+
+		</section>
+	</article>
+	<hr>
+</main>
