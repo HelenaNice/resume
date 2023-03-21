@@ -1,35 +1,5 @@
 <main>
     <article>
-        <section>
-            {{#with navigation}}
-            <div class="card p-2">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-8">
-                            <h2 class="nav-item">{{Logo}}</h2>
-                        </div>
-                        <div class="col-4 text-end">
-                            <div class="nav ">
-                                {{#with links}}
-                                <div class=" nav nav-item">
-                                    <a href="{{[0].href}}" class=" nav nav-link">{{[0].text}}</a>
-                                </div>
-                                <div class=" nav nav-item">
-                                    <a href="[1].href" class="nav nav-link">{{[1].text}}</a>
-                                </div>
-                                <div class="nav nav-item">
-                                    <a href="[2].href" class=" nav nav-link disabled">{{[2].text}}</a>
-                                </div>
-                                {{/with}}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {{/with}}
-        </section>
-
-        <hr class="my-5">
 
         <section>
             {{#with newsBlock}}
@@ -135,106 +105,8 @@
             {{/with}}
         </section>
 
-        <hr class="my-5">
 
-        <section>
-            {{#with footer}}
-            <div>
-                <div class="row">
-                    <div class="col-2">
-                        {{#with [0]}}
-                        <div class="nav-column">
-                            <div class="nav nav-item">
-                                <a class="nav-link" href="{{link}}">{{[0].text}}</a>
-                            </div>
-                            <div class="nav nav-item">
-                                <a class="nav-link" href="{{link}}">{{[1].text}}</a>
-                            </div>
-                            <div class="nav nav-item">
-                                <a class="nav-link" href="{{link}}">{{[2].text}}</a>
-                            </div>
-                            <div class="nav nav-item">
-                                <a class="nav-link disabled" href="{{link}}">{{[3].text}}</a>
-                            </div>
-                        </div>
-                        {{/with}}
-                    </div>
-                    <div class="col-2">
-                        {{#with [1]}}
-                        <div class="nav-column">
-                            <div class="nav nav-item">
-                                <a class="nav-link" href="{{link}}">{{[0].text}}</a>
-                            </div>
-                            <div class="nav nav-item">
-                                <a class="nav-link" href="{{link}}">{{[1].text}}</a>
-                            </div>
-                            <div class="nav nav-item">
-                                <a class="nav-link" href="{{link}}">{{[2].text}}</a>
-                            </div>
-                            <div class="nav nav-item">
-                                <a class="nav-link disabled" href="{{link}}">{{[3].text}}</a>
-                            </div>
-                        </div>
-                        {{/with}}
-                    </div>
-                    <div class="col-2">
-                        {{#with [2]}}
-                        <div class="nav-column">
-                            <div class="nav nav-item">
-                                <a class="nav-link" href="{{link}}">{{[0].text}}</a>
-                            </div>
-                            <div class="nav nav-item">
-                                <a class="nav-link" href="{{link}}">{{[1].text}}</a>
-                            </div>
-                            <div class="nav nav-item">
-                                <a class="nav-link" href="{{link}}">{{[2].text}}</a>
-                            </div>
-                            <div class="nav nav-item">
-                                <a class="nav-link disabled" href="{{link}}">{{[3].text}}</a>
-                            </div>
-                        </div>
-                        {{/with}}
-                    </div>
-                    <div class="col-2">
-                        {{#with [3]}}
-                        <div class="nav-column">
-                            <div class="nav nav-item">
-                                <a class="nav-link" href="{{link}}">{{[0].text}}</a>
-                            </div>
-                            <div class="nav nav-item">
-                                <a class="nav-link" href="{{link}}">{{[1].text}}</a>
-                            </div>
-                            <div class="nav nav-item">
-                                <a class="nav-link" href="{{link}}">{{[2].text}}</a>
-                            </div>
-                            <div class="nav nav-item">
-                                <a class="nav-link disabled" href="{{link}}">{{[3].text}}</a>
-                            </div>
-                        </div>
-                        {{/with}}
-                    </div>
-                    <div class="col-2">
-                        {{#with [4]}}
-                        <div class="nav-column">
-                            <div class="nav nav-item">
-                                <a class="nav-link" href="{{link}}">{{[0].text}}</a>
-                            </div>
-                            <div class="nav nav-item">
-                                <a class="nav-link" href="{{link}}">{{[1].text}}</a>
-                            </div>
-                            <div class="nav nav-item">
-                                <a class="nav-link" href="{{link}}">{{[2].text}}</a>
-                            </div>
-                            <div class="nav nav-item">
-                                <a class="nav-link disabled" href="{{link}}">{{[3].text}}</a>
-                            </div>
-                        </div>
-                        {{/with}}
-                    </div>
-                </div>
-            </div>
-            {{/with}}
 
-        </section>
+
     </article>
 </main>

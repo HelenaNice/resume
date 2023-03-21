@@ -1,0 +1,28 @@
+<section>
+    {{#with navigation}}
+    <div class="card p-2">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-8">
+                    <h2 class="nav-item">{{Logo}}</h2>
+                </div>
+                <div class="col-4 text-end">
+                    <div class="nav ">
+                        {{#with links}}
+                        <div class=" nav nav-item">
+                            <a href="{{[0].href}}" class=" nav nav-link">{{[0].text}}</a>
+                        </div>
+                        <div class=" nav nav-item">
+                            <a href="[1].href" class="nav nav-link">{{[1].text}}</a>
+                        </div>
+                        <div class="nav nav-item">
+                            <a href="[2].href" class=" nav nav-link disabled">{{[2].text}}</a>
+                        </div>
+                        {{/with}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/with}}
+</section>
