@@ -1,0 +1,65 @@
+<main>
+    <article>
+        {{!-- хлебніе крошки --}}
+        <nav class="breadcrumb">
+            <ol class="breadcrumb">
+                {{#each breadcrumb}}
+                {{#if url includeZero=true}}
+                <li class="breadcrumb-item"><a href="{{url}}">{{name}}</a>
+                </li>
+                {{else}}
+                <li class="breadcrumb-item">{{name}}</li>
+                </li>
+                {{/if}}
+                {{/each}}
+                </ul>
+        </nav>
+
+        <section>
+            {{#with newsData}}
+            {{!-- блок с картинкой product data --}}
+            <div class="card">
+                <img class="card-img-top" src="{{photo}}" alt="">
+                {{#with head}}
+                <div class="card-body">
+                    <h2>{{heading}}</h2>
+                    <p>{{description}}</p>
+                </div>
+                {{/with}}
+                {{#each body}}
+                <div class="card-body">
+                    <h5 class="card-title">{{title}}</h5>
+                    <p class="card-text">{{text}}</p>
+                </div>
+                {{/each}}
+            </div>
+            {{/with}}
+        </section>
+        <hr class="my-5">
+        {{!-- блок 4 черных карты--}}
+        <section>
+            {{#with newsOtherBlock}}
+            <h2 class="text-center">{{title}}</h2>
+            <div class="card-group row-cols-4">
+                {{#each cards}}
+                <section class="card-group">
+                    <div class="card text-bg-dark">
+                        <div class="card-header h-100 ">{{title}}
+                            {{#if idNew}}<span class="badge text-bg-success rounded-pill text-capitalize">нова
+                                {{/if}}</span>
+                            {{#if isTop}}<span
+                                class="badge text-bg-danger rounded-pill text-capitalize">топ{{/if}}</span>
+                        </div>
+                        <div class="card-body">{{description}}</div>
+                    </div>
+                </section>
+                {{/each}}
+            </div>
+            {{/with}}
+        </section>
+
+        <hr class="my-5">
+        {{> shopacction}}
+
+    </article>
+</main>
