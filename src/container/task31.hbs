@@ -52,12 +52,9 @@
             <table class="table table-bordered">
                 <thead>
                     <tr>
-                        {{#with head}}
-                        <th>{{[0]}}</th>
-                        <th> {{[1]}}</th>
-                        <th> {{[2]}}</th>
-                        <th> {{[3]}}</th>
-                        {{/with}}
+                        {{#each head}}
+                        <th>{{this}}</th>
+                        {{/each}}
                     </tr>
                 </thead>
                 <tbody>
