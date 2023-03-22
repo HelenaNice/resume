@@ -1,0 +1,128 @@
+<main>
+    <article>
+        {{!-- хлебніе крошки --}}
+        <nav class="breadcrumb">
+            <ol class="breadcrumb">
+                {{#each breadcrumb}}
+                <li class="breadcrumb-item"><a href="{{url}}">{{name}}</a>
+                </li>
+                {{/each}}
+                </ul>
+        </nav>
+
+        <section>
+            {{#with productData}}
+            {{!-- блок с картинкой product data --}}
+            <div class="row">
+                {{!-- первая колонка с карточкой --}}
+                <div class="col-6">
+                    <div class="card">
+                        <img class="card-img-top" src="{{img}}" alt="">
+                        {{#with info}}
+                        <div class="card-body">
+                            <h5 class="card-title">{{title}}</h5>
+                            <p class="card-text">{{about}}</p>
+                            <p class="card-text display-4">{{price}}</p>
+                            {{#each category}}
+                            {{#if isNew}}<span class="badge text-bg-primary rounded-pill text-capitalize">нове
+                                {{/if}}</span>
+                            {{#if isHot}}<span
+                                class="badge text-bg-warning rounded-pill text-capitalize">hot{{/if}}</span>
+                            {{#if isBonus}}<span
+                                class="badge text-bg-warning rounded-pill text-capitalize">bonus{{/if}}</span>
+                            {{/each}}
+                        </div>
+                        {{/with}}
+                    </div>
+                </div>
+                {{!-- вторая колонка с табл + меню +алерт--}}
+                <div class="col-6">
+                    <div class="tables">
+                        {{#with item}}
+                        <table class="table table-bordered">
+                            <thead>
+                                {{#each head}}
+                                <th>{{this}}</th>
+                                {{/each}}
+                            </thead>
+                            <tbody>
+                                {{#each body}}
+                                <tr>
+                                    <th>{{[0]}}</th>
+                                    <td>{{[1]}}</td>
+                                    <td>{{[2]}}</td>
+                                </tr>
+                                {{/each}}
+                            </tbody>
+                        </table>
+                        {{/with}}
+                    </div>
+                    {{!-- параметри --}}
+                    {{#with param}}
+                    <div class="card text-bg-light">
+                        <div class="card-header">
+                            <div>{{title}}</div>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            {{#each list}}
+                            <li class="list-group-item">
+                                {{this}}
+                            </li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                    {{/with}}
+                    <div class="alert alert-danger my-3">
+                        {{#if isError}}{{alert.text}}{{else}}{{alert.text}}{{/if}}
+                        {{else}}
+                    </div>
+                </div>
+            </div>
+            {{/with}}
+        </section>
+        {{!-- панельс кнопками вибору --}}
+        <section class="mt-1 mb-5">
+            {{#with productData}}
+            <div class="mb-5">
+                {{#each actionList}}
+                {{#if isWarning}}
+                <button type="button" class="btn btn-warning me-2">{{name}}</button>
+                {{/if}}
+                {{#if isError}}
+                <button type="button" class="btn btn-outline-danger me-2">{{name}}</button>
+                {{/if}}
+                {{#if isSuccess}}
+                <button type="button" class="btn btn-success me-2">{{name}}</button>
+                {{/if}}
+                {{#if isGood}}
+                <button type="button" class="btn btn-outline-success me-2">{{name}}</button>
+                {{/if}}
+                {{/each}}
+            </div>
+            {{/with}}
+        </section>
+
+        <hr class="my-5">
+
+        <section class="mt-1 mb-5">
+            {{#with goodsOtherBlock}}
+            {{!-- блок с товарами карточки--}}
+            <h2 class="text-center mb-3">{{title}}</h2>
+            <section>
+                <div class="card-group row-cols-md-3">
+                    {{#each cards}}
+                    <section class="card-group">
+                        {{> shopcard}}
+                    </section>
+                    {{/each}}
+                </div>
+            </section>
+            {{/with}}
+        </section>
+
+
+        <hr class="my-5">
+        {{> shopacction}}
+
+    </article>
+</main>
