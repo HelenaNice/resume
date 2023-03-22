@@ -54,8 +54,8 @@
                                 </tr>
                                 {{/each}}
                             </tbody>
-                            {{/with}}
                         </table>
+                        {{/with}}
                     </div>
                     {{!-- параметри --}}
                     {{#with param}}
@@ -72,85 +72,55 @@
                         </ul>
                     </div>
                     {{/with}}
-                    <div class="alert alert-danger my-2">
+                    <div class="alert alert-danger my-3">
                         {{#if isError}}{{alert.text}}{{else}}{{alert.text}}{{/if}}
                         {{else}}
                     </div>
-                    {{#with param}}
-
-                    {{/with}}
                 </div>
-
-        </section>
-
-
-
-        </div>
-
-
-
-        </div>
-
-        </div>
-        {{/with}}
-
-        </section>
-
-        <hr class="my-5">
-        <section>
-            {{#with goodsBlock}}
-            {{#with tabs}}
-            <ul class="nav nav-tabs">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">{{[0].text}}</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">{{[1].text}}</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">{{[2].text}}</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled">{{[3].text}}</a>
-                </li>
-            </ul>
+            </div>
             {{/with}}
         </section>
-        <section>
-            <div class="card-group row-cols-md-3">
-                {{#each cards}}
-                <section class="card-group">
-                    {{> shopcard}}
-                </section>
+        {{!-- панельс кнопками вибору --}}
+        <section class="mt-1 mb-5">
+            {{#with productData}}
+            <div class="mb-5">
+                {{#each actionList}}
+                {{#if isWarning}}
+                <button type="button" class="btn btn-warning me-2">{{name}}</button>
+                {{/if}}
+                {{#if isError}}
+                <button type="button" class="btn btn-outline-danger me-2">{{name}}</button>
+                {{/if}}
+                {{#if isSuccess}}
+                <button type="button" class="btn btn-success me-2">{{name}}</button>
+                {{/if}}
+                {{#if isGood}}
+                <button type="button" class="btn btn-outline-success me-2">{{name}}</button>
+                {{/if}}
                 {{/each}}
             </div>
-        </section>
-        {{/with}}
-        </section>
-        <hr class="my-5">
-
-        <section>
-            {{#with subscribe}}
-            <div class="card text-bg-dark">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-6">
-                            <div>
-                                <h2><a>{{header}}</a></h2>
-                                <div class="mb-2">{{description}}</div>
-                            </div>
-                        </div>
-                        <div class="col-6 text-end my-3 ">
-                            {{#each buttons}}
-                            <button class="btn btn-primary ms-2">
-                                <a href="{{link}}"></a>{{text}}</button>
-                            {{/each}}
-                        </div>
-                    </div>
-                </div>
-            </div>
             {{/with}}
         </section>
+
+        <hr class="my-5">
+
+        <section class="mt-1 mb-5">
+            {{#with goodsOtherBlock}}
+            {{!-- блок с товарами карточки--}}
+            <h2 class="text-center mb-3">{{title}}</h2>
+            <section>
+                <div class="card-group row-cols-md-3">
+                    {{#each cards}}
+                    <section class="card-group">
+                        {{> shopcard}}
+                    </section>
+                    {{/each}}
+                </div>
+            </section>
+            {{/with}}
+        </section>
+
+
         <hr class="my-5">
         {{> shopacction}}
 
