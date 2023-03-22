@@ -1,14 +1,7 @@
 <main>
     <article>
         {{!-- хлебніе крошки --}}
-        <nav class="breadcrumb">
-            <ol class="breadcrumb">
-                {{#each breadcrumb}}
-                <li class="breadcrumb-item"><a href="{{url}}">{{name}}</a>
-                </li>
-                {{/each}}
-                </ul>
-        </nav>
+        {{> breadcrumb}}
 
         <section>
             {{#with productData}}
