@@ -1,0 +1,105 @@
+<main>
+    <article>
+        {{!--Header--}}
+        <section>
+            {{#with header}}
+            <div class="row">
+                <div class="col-6">
+                    <h2>{{title}}</h2>
+                </div>
+                <div class="col-6 text-end">
+                    {{#with button}}
+                    <a href="{{href}}" class="btn btn-outline-dark">{{text}}</a>
+                    </button>
+                </div>
+                {{/with}}
+            </div>
+            </div>
+            {{/with}}
+        </section>
+
+        {{!--==================== --}}
+        <hr clas=" my-5">
+        {{!--goodsBlock--}}
+        <section>
+            {{#each goodsBlock}}
+            {{> cartGoodsItem}}
+            {{/each}}
+        </section>
+        {{!--==================== --}}
+        <hr clas=" my-5">
+        {{!--total --}}
+        <section>
+            {{#with total}}
+            <div class="row">
+                <div class="col-7">
+                    <div>
+                        <h3>{{title}}</h3>
+                    </div>
+                    <div class="display-5"><b>{{amount}}</b></div>
+                    <div>{{delivery}}</div>
+                </div>
+                <div class="col-5">
+                    {{#each buttons}}
+                    <div class="my-2">
+                        {{#if isSuccess}}<a href="{{link}}" class="btn btn-success">{{text}}</a>
+                        {{/if}}
+                        {{#if isOutline}} <a href="{{link}}" class="btn btn-outline-success">{{text}}</a>
+                        {{/if}}
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+            {{/with}}
+        </section>
+        {{!--==================== --}}
+        <hr clas=" my-5">
+        {{!--goodsOtherBlock --}}
+        <section>
+            {{#with goodsOtherBlock}}
+            <h3 class="text-center">{{title}}</h3>
+            <div class="card-group row-cols-md-3">
+                {{#each cards}}
+                <section class="card-group">
+                    {{> shopcard}}
+                </section>
+                {{/each}}
+            </div>
+            </div>
+            {{/with}}
+        </section>
+        {{!--==================== --}}
+        <hr clas=" my-5">
+
+        {{!--subscribe--}}
+        <section>
+            {{#with subscribe}}
+            <div class="card text-bg-dark">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-6">
+                            <div>
+                                <h2><a>{{header}}</a></h2>
+                                <div class="mb-2">{{description}}</div>
+                            </div>
+                        </div>
+                        <div class="col-6 text-end my-3 ">
+                            {{#each buttons}}
+                            <button class="btn btn-primary ms-2">
+                                <a href="{{link}}"></a>{{text}}</button>
+                            {{/each}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/with}}
+        </section>
+        {{!-- ============ --}}
+
+
+
+
+
+
+    </article>
+</main>

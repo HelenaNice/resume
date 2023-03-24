@@ -38,18 +38,7 @@
             <div class="card-group row-cols-md-3">
                 {{#each cards}}
                 <section class="card-group">
-                    <div class="card">
-                        <img class="card-img-top" src="{{image}}" alt="">
-                        <div class="card-body">
-                            <h5 class="card-title">{{title}}
-                                {{#if idNew}}<span class="badge text-bg-primary rounded-pill text-capitalize">нове
-                                    {{/if}}</span>
-                                {{#if isHot}}<span
-                                    class="badge text-bg-warning rounded-pill text-capitalize">hot{{/if}}</span>
-                            </h5>
-                            <p class="card-text">{{description}}</p>
-                        </div>
-                    </div>
+                    {{> shopcard}}
                 </section>
                 {{/each}}
             </div>
