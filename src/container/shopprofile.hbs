@@ -1,0 +1,224 @@
+<main>
+    <article>
+        <section>
+            {{!--Мої замовлення--}}
+            <h1 class="mb-3">{{header}}</h1>
+            <div>
+                {{!-- навигацион вкладки --}}
+                {{#with purchase}}
+                <ul class="nav nav-tabs">
+                    {{#with tabs}}
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#"><b>{{[0]}}</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">{{[1]}}</a>
+                    </li>
+                    {{/with}}
+                </ul>
+                <br>
+                {{#with actionBlock}}
+                {{!-- Инпут и три кнопки в ряд --}}
+                <div class="row my-2">
+                    <div class="col-4 pe-0">
+                        {{#with input}}
+                        <input class="form-control" placeholder="{{placeholder}}">
+                        {{/with}}
+                    </div>
+                    <div class="col-8">
+                        {{#each buttons}}
+                        <span class="col-12 my-1 me-2">
+                            {{#if isSuccess}}
+                            <button class="btn text-light text-bg-success">{{text}}</button>
+                            {{/if}}
+                            {{#if isOutline}}
+                            <button class="btn btn-outline-success">{{text}}</button>
+                            {{/if}}
+                            {{#if isDanger}}
+                            <button class="btn btn-outline-danger">{{text}}</button>
+                            {{/if}}
+                        </span>
+                        {{/each}}
+                    </div> {{!-- ======================= --}}
+                    {{/with}}
+                </div>
+                <br>
+                <div>
+                    {{!-- 4 колон. компонент заказа с картинкой и кнопкой --}}
+                    {{#each itemList}}
+                    {{> purchaseItem}}
+                    {{/each}}
+                </div>
+                {{/with}}
+            </div>
+            {{!--***end***purchase --}}
+        </section>
+        {{!-- ===================== --}}
+        <hr class="my-5">
+        <section>
+            {{!--Особиста інформація--}}
+            {{#with userInfo}}
+            <h2 class="mb-5">{{title}}</h2>
+
+            <div class="card pb-2">
+                {{#with profileData}}
+                <div class="card-body">
+                    <div class="card-title mb-3">
+                        {{!-- заголовок --}}
+                        <h3>{{title}}</h3>
+                        {{!-- ряд из трех колонок--}}
+                        {{#with fullName}}
+                        <div class="row">
+                            {{!-- ФИО--}}
+                            <div class="col-4">
+                                <div>{{surname.title}}</div>
+                            </div>
+                            <div class="col-4">
+                                <div>{{name.title}}</div>
+                            </div>
+                            <div class="col-4">
+                                <div>{{middleName.title}}</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            {{!-- данные покупателя --}}
+                            <div class="col-4">
+                                <div><b>{{surname.value}}</b></div>
+                            </div>
+                            <div class="col-4">
+                                <div><b>{{name.value}}</b></div>
+                            </div>
+                            <div class="col-4">
+                                <div><b>{{middleName.value}}</b></div>
+                            </div>
+                        </div>
+                        {{/with}}
+                        <br>
+                        {{!-- доп инфо адрес,пол, язык --}}
+                        {{#with otherInfo}}
+                        <div class="row">
+                            <div class="col-4">
+                                <div>{{birthday.title}}</div>
+                            </div>
+                            <div class="col-4">
+                                <div>{{sex.title}}</div>
+                            </div>
+                            <div class="col-4">
+                                <div>{{language.title}}</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            {{!-- ответ --}}
+                            <div class="col-4">
+                                <div><b>{{birthday.value}}</b></div>
+                            </div>
+                            <div class="col-4">
+                                <div><b>{{sex.value}}</b></div>
+                            </div>
+                            <div class="col-4">
+                                <div><b>{{language.value}}</b></div>
+                            </div>
+                        </div>
+                        {{/with}}
+                    </div>
+
+                    {{/with}}
+                </div>
+
+                {{!-- кнопки три в ряд но в разных фреймах --}}
+                {{#with buttons}}
+                <div class="row m-2">
+                    <div class="col-4">
+                        <a href="{{link}}" class="btn btn-primary">{{[0].text}}</a>
+                    </div>
+                    <div class="col-4">
+                        <a href="{{link}}" class="btn btn-outline-dark">{{[1].text}}</a>
+
+                    </div>
+                    <div class="col-4">
+                        <a href="{{link}}" class="btn btn-outline-danger">{{[2].text}}</a>
+                        <div><b>{{language.value}}</b></div>
+                    </div>
+                </div>
+
+                {{!-- ========================== --}}
+                {{/with}}
+            </div>
+
+            <br>
+            {{!-- отримувачі посилки --}}
+            <div class="card p-3">
+                {{#with recipients}}
+                <h3 class="mb-3">{{title}}</h3>
+                <div class="row">
+                    <div class="col-3">
+                        {{#with users.[0]}}
+                        {{> namePhoneButton}}
+                        {{/with}}
+                    </div>
+                    <div class="col-3">
+                        {{#with users.[1]}}
+                        {{> namePhoneButton}}
+                        {{/with}}
+                    </div>
+                    {{!-- </div> --}}
+                </div>
+            </div>
+            <br>
+            {{/with}}
+            <div class="card p-3">
+                {{#with contacts}}
+                {{!-- заголовок --}}
+                <h3 class="mb-2">{{title}}</h3>
+                {{!-- ряд из трех колонок--}}
+                {{#with contactData}}
+                <div class="row">
+                    {{!-- запрос контактов--}}
+                    <div class="col-4">
+                        <div>{{phone.title}}</div>
+                    </div>
+                    <div class="col-4">
+                        <div>{{additionalPhone.title}}</div>
+                    </div>
+                    <div class="col-4">
+                        <div>{{email.title}}</div>
+                    </div>
+                </div>
+                <div class="row">
+                    {{!-- номера --}}
+                    <div class="col-4">
+                        <div><b>{{phone.value}}</b></div>
+                    </div>
+                    <div class="col-4">
+                        <div><b>{{additionalPhone.value}}</b></div>
+                    </div>
+                    <div class="col-4">
+                        <div><b>{{email.value}}</b></div>
+                    </div>
+                </div>
+                {{/with}}
+                {{!-- =============== --}}
+                {{#with buttons}}
+                <div class="row mt-3">
+                    <div class="col-4">
+                        <a href="{{link}}" class="btn btn-primary">{{[0].text}}</a>
+                    </div>
+                    <div class="col-4">
+                        <a href="{{link}}" class="btn btn-outline-dark">{{[1].text}}</a>
+
+                    </div>
+                    <div class="col-4">
+                        <a href="{{link}}" class="btn btn-outline-danger">{{[2].text}}</a>
+                        <div><b>{{language.value}}</b></div>
+                    </div>
+                </div>
+                {{/with}}
+                {{/with}}
+
+
+            </div>
+            {{/with}}
+        </section>
+
+    </article>
+</main>
