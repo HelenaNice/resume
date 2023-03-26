@@ -1,0 +1,110 @@
+<main>
+    {{!-- breadcrumb --}}
+    <section>
+        {{> breadcrumb}}
+    </section>
+    <hr class="my-4">
+    {{!-- sortBlock --}}
+    <section>
+        <h1 class="my-4">{{header}}</h1>
+        <div class="row">
+            {{!-- <div class="col-12"> --}}
+            {{#each sortBlock}}
+            <div class="col-3 pe-1 me-2">
+                <label class="form-label">{{lable}}</label>
+                <select class="form-select form-select-lg">
+                    <option selected label="{{placeholder}}"></option>
+                    {{#each options}}
+                    <option value="value">{{text}}</option>
+                    {{/each}}
+                </select>
+            </div>
+            {{/each}}
+        </div>
+    </section>
+
+    <hr class="my-5">
+    <div class="row">
+        {{#with filterBlock}}
+        <div class="col-4 mt-3">
+            <div class="card p-2">
+                {{!-- секция с опціями вибору--}}
+                <section>{{!-- продавець --}}
+                    {{#with sellers}}
+                    <h6>{{title}}</h6>
+                    {{#each list}}
+
+                    <div class="form-check">
+                        <label class="form-check-label">{{value}}</label>
+                        <input name="seller" type="checkbox" class="form-check-input">
+                    </div>
+                    {{/each}}
+                    {{/with}}
+                </section>
+                <hr class="my-1">
+                <section>{{!-- брєнд --}}
+                    {{#with brands}}
+                    <h6>{{title}}</h6>
+                    <input type="surname" class="form-control" placeholder="{{input.placeholder}}">
+                    {{#each options}}
+                    <div class="form-check">
+                        <label class="form-check-label">{{value}}</label>
+                        <input name="seller" type="checkbox" class="form-check-input">
+                    </div>
+                    {{/each}}
+                    {{/with}}
+                </section>
+                <hr class="my-1">
+                <section>{{!-- ціна --}}
+                    {{#with price}}
+                    <h6>{{title}}</h6>
+                    <div class="row g-2">
+                        <div class="col-5 pe-1">
+                            <input class="form-control form-control-sm" placeholder="{{range.from}}">
+                        </div>
+                        <div class="col-5">
+                            <input class="form-control form-control-sm" placeholder="{{range.to}}">
+                        </div>
+                        <div class="col-1">
+                            <button class="btn text-light text-bg-success btn-sm">{{button.text}}</button>
+                        </div>
+                    </div>
+
+                    {{/with}}
+
+                </section>
+
+                <section>{{!-- options --}}
+                    {{#each filterList}}
+                    <hr>
+                    <div>
+                        <h6>{{title}}</h6>
+                        {{#each options}}
+                        <div class="form-check">
+                            <label class="form-check-label">{{value}}</label>
+                            <input name="option" type="checkbox" class="form-check-input">
+                        </div>
+                        {{/each}}
+                    </div>
+
+                    {{/each}}
+                </section>
+
+
+
+            </div>
+        </div>
+        {{/with}}
+
+        <div class="col-8 mt-0">
+            <div class="card-group row-cols-md-2">
+                {{#each goodsList}}
+                <section class="card-group">
+                    {{> catalogItem}}
+                </section>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+
+</main>
