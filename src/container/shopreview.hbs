@@ -1,0 +1,144 @@
+<main>
+    <article>
+        {{!-- відгуки покупців --}}
+
+        {{#with formBlock}}
+        <section>
+            {{!-- дві колонки блока --}}
+            <div class="row">
+                {{!-- перша колонка feedbackBlock--}}
+                <div class="col-8">
+                    {{!--Відгуки покупців про Ноут--}}
+                    <div>
+                        <div>
+                            <h2>{{header}}</h2>
+                            {{#with rating}}
+                            <div>{{title}}: {{value}}</div>
+                            {{/with}}
+                        </div>
+                        <br>
+                        {{!-- навигационка --}}
+                        {{#with actionBlock}}
+                        <div>
+                            <div>
+                                <ul class="nav nav-tabs">
+                                    {{#each tabs}}
+                                    <li class="nav-item">
+                                        {{#if isActive}}
+                                        <a class="nav-link active" href="#">{{text}}</a>
+                                        {{else}}
+                                        <a class="nav-link" href="#">{{text}}</a>
+                                        {{/if}}
+                                    </li>
+                                    {{/each}}
+                                </ul>
+                            </div>
+                            {{!-- =============нав==========--}}
+                            <hr class="my-5">
+                            {{#with field}}
+                            {{!--Залиште відгук про товар --}}
+                            <div class="card p-2">
+                                <div class="row">
+                                    <div class="col-6">
+                                        {{placeholder}}
+                                    </div>
+                                    <div class="col-6 text-end">
+                                        <button class="btn text-light text-bg-secondary mb-2">{{button.text}}<a
+                                                href="{{button.link}}"></a></button>
+                                    </div>
+                                </div>
+                            </div>
+                            {{/with}}
+                        </div>
+                        {{!-- =========== --}}
+                        {{/with}}
+                        <hr class="my-5">
+                        {{#with feedbackBlock}}
+                        <div>
+                            {{!-- Хочете поділитись своєю думкою --}}
+                            <h2 class="my-5">{{title}}</h2>
+                            <div>
+                                {{!-- кнопки три в ряд --}}
+                                {{#each buttons}}
+                                <span class="col-12 my-1 me-2">
+                                    {{#if isSuccess}}
+                                    <button class="btn text-light text-bg-success">{{text}}</button>
+                                    {{/if}}
+                                    {{#if isWarning}}
+                                    <button class="btn text-light btn btn-warning">{{text}}</button>
+                                    {{/if}}
+                                    {{#if isDanger}}
+                                    <button class="btn btn-danger">{{text}}</button>
+                                    {{/if}}
+                                </span>
+                                {{/each}}
+                            </div>
+                        </div>
+                        {{/with}}
+                    </div>
+                </div>
+                {{!-- ==== перша колонка feedbackBlock====--}}
+                {{!-- друга колонка goodsInfo --}}
+
+                <div class="col-4">
+                    {{#with goodsInfo}}
+                    <div class="card p-2">
+                        {{!-- блок с фото --}}
+                        <div class="row">
+                            <div class="col-7">
+                                <img class="card-img-top" src="{{photo}}" alt="{{alt}} ">
+                            </div>
+                            <h5 class="mt-2">{{name}}</h5>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="card p-2">
+                        {{!-- блок с ціною --}}
+                        <div class="col-12">
+                            <h5 class="mt-2">{{price}}</h5>
+                            <div>Є в наявності</div>
+                            <div>
+                                {{!-- блок з кнопками колонка --}}
+                                {{#each buttons}}
+                                <div class="my-1">
+                                    {{#if isPrimary}}
+                                    <button class="btn text-light text-bg-primary mb-2">{{text}}</button>
+                                    {{/if}}
+                                    {{#if isSecondary}}
+                                    <button class="btn btn-secondary mb-2">{{text}}</button>
+                                    {{/if}}
+                                </div>
+                                {{/each}}
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    {{!-- продавець --}}
+                    <div class="card p-2">
+                        <div>{{seller.title}}: <b></b>{{seller.value}}</div>
+                    </div>
+                </div>
+                {{/with}}
+            </div>
+            {{!-- ==== друга колонка goodsInfo====--}}
+            </div>
+            {{!-- ===дві колонки блока ======= --}}
+        </section>
+        {{/with}}
+        <hr class="my-5">
+        {{#each reviewList}}
+        {{!-- відгуки про товар кілька --}}
+        <section>
+            {{!-- рамка загальна на один відгук --}}
+            {{> reviewItem}}
+        </section>
+        {{/each}}
+
+        <hr class="my-5">
+
+        {{!-- сервис --}}
+        <section>
+            {{> shopacction}}
+        </section>
+    </article>
+</main>

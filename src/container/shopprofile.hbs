@@ -4,6 +4,7 @@
             {{!--Мої замовлення--}}
             <h1 class="mb-3">{{header}}</h1>
             <div>
+
                 {{!-- навигацион вкладки --}}
                 {{#with purchase}}
                 <ul class="nav nav-tabs">
@@ -16,6 +17,7 @@
                     </li>
                     {{/with}}
                 </ul>
+
                 <br>
                 {{#with actionBlock}}
                 {{!-- Инпут и три кнопки в ряд --}}
@@ -42,6 +44,7 @@
                     </div> {{!-- ======================= --}}
                     {{/with}}
                 </div>
+
                 <br>
                 <div>
                     {{!-- 4 колон. компонент заказа с картинкой и кнопкой --}}
@@ -59,7 +62,6 @@
             {{!--Особиста інформація--}}
             {{#with userInfo}}
             <h2 class="mb-5">{{title}}</h2>
-
             <div class="card pb-2">
                 {{#with profileData}}
                 <div class="card-body">
@@ -164,6 +166,7 @@
                     {{!-- </div> --}}
                 </div>
             </div>
+
             <br>
             {{/with}}
             <div class="card p-3">
@@ -217,6 +220,7 @@
 
 
             </div>
+
             {{/with}}
         </section>
 
