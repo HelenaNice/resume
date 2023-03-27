@@ -2,15 +2,56 @@
 Це код container файлу для index сторінки, 
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
  --}}
+<main>
 
-<div class="p-5">
-    <h1>USB хаб Type C 12 в 1 HDMI VGA AUX 3.5 mm</h1>
+    <section>
+        {{!-- лок с инфо про страницы --}}
+        <h2 class="text-center text-uppercase">
+            проект
+        </h2>
+        <br>
+        <div class="text-center">На цій сторінці ви можете ознайомитися зі змістом цього проекту.
+            Протягом навчання самостійно розробленні популярні версії верстки сторінок сайтів.</div>
+    </section>
 
-    <button type="button" class="btn btn-primary">Купити</button>
-</div>
+    <section>
+        {{!-- кнопки навигации по сайту --}}
+        <div class="row">
+            <div class="col-3">
+                {{!-- basic button --}}
+                <a href="/summary" class="btn btn-primary my-1 col-12">Summary </a>
+                {{!-- ====== --}}
+                <a href="/skills" class="btn btn-primary my-1 col-12">Skills</a>
+                <a href="/education" class="btn btn-primary my-1 col-12">Education </a>
+                <a href="/work" class="btn btn-primary my-1 col-12">Work</a>
+                <a href="/person" class="btn btn-primary my-1 col-12">Person</a>
+                <a href="/bio" class="btn btn-primary my-1 col-12">Biography</a>
+                <a href="/program" class="btn btn-primary my-1 col-12">Cultural Tour</a>
+                <a href="/web" class="btn btn-primary my-1 col-12">Web</a>
+                <a href="/car" class="btn btn-primary my-1 col-12">Toyota Camry</a>
+                <a href="/mac" class="btn btn-primary my-1 col-12">Apple MacBook Pro</a>
+                <a href="/task21" class="btn btn-primary my-1 col-12">JavaScript</a>
+                <a href="/task22" class="btn btn-primary my-1 col-12">InnovaMind</a>
+                <a href="/task31" class="btn btn-primary my-1 col-12">City list</a>
+                {{!-- buttom shops --}}
+                <a href="/shophome" class="btn btn-success my-1 col-12">Shophome</a>
+                <a href="/shopproduct" class="btn btn-success my-1 col-12">Shopproduct</a>
+                <a href="/shopnews" class="btn btn-success my-1 col-12">Shopnews</a>
+                <a href="/shoporder" class="btn btn-success my-1 col-12">Shoporder</a>
+                <a href="/shopcart" class="btn btn-success my-1 col-12">Shopcart</a>
+                <a href="/shopprofile" class="btn btn-success my-1 col-12">Shopprofile</a>
+                <a href="/shopreview" class="btn btn-success my-1 col-12">Shopreview</a>
+                <a href="/shopcatalog" class="btn btn-success my-1 col-12">Shopcatalog</a>
+
+            </div>
+        </div>
+    </section>
+    {{!-- icon return home --}}
+    {{!-- <a href="/" class="btn col-1"><img src="home-outline.svg" width="30 px" height="30 px"></a> --}}
 
 
-{{!-- 
+
+    {{!-- 
     Цей код містить лише те, що буде виводитись в <body>
     Адже наш layout/default.hbs має вже структуру HTML
 --}}

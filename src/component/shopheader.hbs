@@ -1,6 +1,29 @@
 <section>
     {{#with navigation}}
-    <div class="card p-2">
+    <div class="card p-3">
+        <div class="row">
+            <div class="col-8">
+                <h2 class="nav-item">{{Logo}}</h2>
+            </div>
+            <div class="col-4 text-end">
+                <div class="nav">
+                    {{#each links}}
+                    <span class="nav nav-item">
+                        {{#if @last}}
+                        <a href="{{href}}" class="nav-link disabled">{{text}}</a>
+                        {{else}}
+                        <a href="{{href}}" class="nav-link">{{text}}</a> {{/if}}</a>
+                    </span>
+                    {{/each}}
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    {{!-- <div class="card p-2">
         <div class="card-body">
             <div class="row">
                 <div class="col-8">
@@ -23,6 +46,6 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     {{/with}}
 </section>
