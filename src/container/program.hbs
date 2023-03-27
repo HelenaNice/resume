@@ -9,6 +9,7 @@
 			<div>Location: {{location.city}}. {{location.country}}</div>
 			<div>Date: {{date}}</div>
 		</section>
+
 		<hr>
 		{{#with program}}
 		<section>
@@ -55,7 +56,10 @@
 				</section>
 			</section>
 		</section>
+		{{/with}}
+
 		====
+		{{#with program}}
 		<section>
 			<h4> 2. {{[1].name}}</h4>
 			<div>Type: {{[1].type}}</div>
@@ -88,12 +92,16 @@
 				<div>Rating: {{[1].details.guide.rating}}</div>
 			</section>
 		</section>
-		</section>
+		{{/with}}
+		{{/with}}
+		{{/with}}
+
 
 		<hr>
 
 
 	</article>
+
 
 
 </main>
