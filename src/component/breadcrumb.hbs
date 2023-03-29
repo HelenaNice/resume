@@ -2,7 +2,8 @@
     <ol class="breadcrumb">
         {{#each breadcrumb}}
         {{#if url includeZero=true}}
-        <li class="breadcrumb-item"><a href="{{url}}">{{name}}</a>
+        {{!-- чтобы убрать подчеркнутость в  хлебн крошках: <a class='text-decoration-none' --}}
+        <li class="breadcrumb-item"><a class='text-decoration-none' href="{{url}}">{{name}}</a>
         </li>
         {{else}}
         <li class="breadcrumb-item">{{name}}</li>
